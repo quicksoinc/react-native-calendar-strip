@@ -600,7 +600,7 @@ class CalendarStrip extends Component {
     );
 
     let weekSelector = (
-      <View style={styles.headerContainer}>
+      <View style={styles.calendarHeaderContainer}>
         <WeekSelector
           controlDate={this.props.minDate}
           iconComponent={this.props.leftSelector}
