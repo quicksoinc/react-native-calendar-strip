@@ -129,6 +129,7 @@ class CalendarDay extends Component {
     if (!this.props.markedDates || this.props.markedDates.length === 0) {
       return;
     }
+    const selected = this.props.selected;
     const marking = this.props.marking || {};
     const baseDotStyle = [styles.dot, styles.visibleDot];
     const markedDatesStyle = this.props.markedDatesStyle || {};
@@ -144,7 +145,7 @@ class CalendarDay extends Component {
             key={dot.key ? dot.key : index}
             style={[
               baseDotStyle,
-              { backgroundColor: marking.selected && dot.selectedDotColor ? dot.selectedDotColor : dot.color },
+              { backgroundColor: selected && dot.selectedDotColor ? dot.selectedDotColor : dot.color },
               markedDatesStyle
             ]}
           />
