@@ -6,9 +6,7 @@ import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
   //CALENDAR STYLES
-  calendarContainer: {
-    overflow: "hidden"
-  },
+  calendarContainer: {},
   datesStrip: {
     flexDirection: "row",
     flex: 1,
@@ -19,6 +17,11 @@ export default StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center"
+  },
+  calendarHeaderContainer: {
+    flexDirection: "row",
+    justifyContent: "center",
+    marginBottom: 10,
   },
   calendarHeader: {
     textAlign: "center",
