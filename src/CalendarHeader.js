@@ -6,7 +6,10 @@ import styles from "./Calendar.style.js";
 
 class CalendarHeader extends Component {
   static propTypes = {
-    calendarHeaderFormat: PropTypes.string.isRequired,
+    calendarHeaderFormat: PropTypes.oneOfType([
+      PropTypes.func,
+      PropTypes.string,
+    ]).isRequired,
     calendarHeaderContainerStyle: PropTypes.oneOfType([
       PropTypes.object,
       PropTypes.number
@@ -30,8 +33,15 @@ class CalendarHeader extends Component {
       return "";
     }
 
+
     let firstDay = datesForWeek[0];
     let lastDay = datesForWeek[datesForWeek.length - 1];
+
+    // Support custom header fn. TODO: Take this in as a separate prop.
+    if (typeof calendarHeaderFormat === "function") {
+      return calendarHeaderFormat({ firstDay, lastDay });
+    }
+
     let monthFormatting = "";
     //Parsing the month part of the user defined formating
     if ((calendarHeaderFormat.match(/Mo/g) || []).length > 0) {

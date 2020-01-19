@@ -58,7 +58,7 @@ class CalendarStrip extends Component {
 
     calendarHeaderContainerStyle: PropTypes.any,
     calendarHeaderStyle: PropTypes.any,
-    calendarHeaderFormat: PropTypes.string,
+    calendarHeaderFormat: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     calendarHeaderPosition: PropTypes.oneOf(["above", "below"]),
 
     calendarAnimation: PropTypes.object,
