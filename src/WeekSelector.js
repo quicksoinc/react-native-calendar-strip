@@ -66,11 +66,12 @@ class WeekSelector extends Component {
       onPress,
       weekEndDate,
       weekStartDate,
+      disabledIconOpacity = 0.2,
       size
     } = this.props;
 
     const enabled = this.isEnabled(controlDate, weekStartDate, weekEndDate);
-    const opacity = { opacity: enabled ? 1 : 0 };
+    const opacity = { opacity: enabled ? 1 : disabledIconOpacity };
 
     let component;
     if (React.isValidElement(iconComponent)) {
